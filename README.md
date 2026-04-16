@@ -22,7 +22,7 @@ andmebaasidega seotud SQL kood ja konspektid
 ## SQL - Strukture Query Language - struktureeritud päringu keel
 - Tabeli loomine
 ```
-  CREATE DATABASE BurovaBaas;
+CREATE DATABASE BurovaBaas;
 
 
 use BurovaBaas;
