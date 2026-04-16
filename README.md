@@ -82,3 +82,4 @@ INSERT INTO opetamine
 VALUES ('2026-04-16', 'andmebaasid', 5, 4)
 
 ```
+<img width="841" height="417" alt="{68882913-8511-4C4A-9AA0-575A3A28AAA9}" src="https://github.com/user-attachments/assets/760b05fb-9ca9-4c89-8c17-a86b4c09867c" />
