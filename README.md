@@ -1,5 +1,13 @@
 # Andmebaasid
 andmebaasidega seotud SQL kood ja konspektid
+## SISUKORD 
+- [Põhimõisted](#põhimõisted)
+- [Andmetüübid](#andmetüübid)
+- [PIIRANGUD](#PIIRANGUD)
+- [# SQL - Strukture Query Language - struktureeritud päringu keel](#SQL-Strukture-Query-Language-struktureeritud-päringu-keel)
+- [ALTER TABLE](#ALTER-TABLE)
+- [tund 23.04](#tund-23.04)
+
 ## Põhimõisted 
 - andmebaas - struktureeritud andmete kogum
 - tabel = olem -сущность -entity
@@ -83,3 +91,84 @@ VALUES ('2026-04-16', 'andmebaasid', 5, 4)
 
 ```
 <img width="841" height="417" alt="{68882913-8511-4C4A-9AA0-575A3A28AAA9}" src="https://github.com/user-attachments/assets/760b05fb-9ca9-4c89-8c17-a86b4c09867c" />
+
+
+
+
+
+## ALTER TABLE
+- tabeli struktuuri muutmine (struktuur: veerudenimed, andmetüübid, piirangud)
+
+
+```sql
+--uue veeru lisamine
+ALTER TABLE opilane ADD isikukood varchar(11);
+
+--veeru kustutamine
+ALTER TABLE opilane DROP COLUMN isikukood;
+
+--andmetüübid muutmine varchar(11)-->char(11)
+ALTER TABLE opilane ALTER COLUMN isikukood char(11);
+
+--sisseehitatud protseduur, mis näitab tabeli struktuur
+sp_help opilane;
+```
+
+## tund 23.04
+```sql
+CREATE DATABASE TITpv24Burova;
+
+USE TITpv24Burova;
+CREATE TABLE opilane(
+opilaneID int Primary Key identity(1,1), --automaatselt täitab nubritega
+eesnimi varchar(25),
+perenimi varchar(30) NOT NULL,
+synniaeg DATE, 
+stip bit,
+mobiil varchar(13),
+aadress TEXT,
+keskmineHinne decimal(2,1) ) --(2--kokku,1-- peale komat nt 4.5)
+
+SELECT * FROM opilane;
+
+--uue veeru lisamine
+ALTER TABLE opilane ADD isikukood varchar(11);
+
+--veeru kustutamine
+ALTER TABLE opilane DROP COLUMN isikukood;
+
+--andmetüübid muutmine varchar(11)-->char(11)
+ALTER TABLE opilane ALTER COLUMN isikukood char(11);
+
+--sisseehitatud protseduur, mis näitab tabeli struktuur
+sp_help opilane;
+
+--piirangud lisamine
+CREATE TABLE ryhm(
+ryhmId int not null,
+ryhmNimi char(10));
+drop table ryhm;
+
+sp_help ryhm;
+
+--PK lisamine
+ALTER TABLE ryhm ADD CONSTRAINT pk_ryhm PRIMARY KEY (ryhmId);
+--UNIQUE lisamine
+ALTER TABLE ryhm ADD CONSTRAINT un_ryhm UNIQUE (ryhmNimi);
+
+--kontrollimiseks täidame tabelit ryhm
+SELECT * FROM ryhm;
+INSERT INTO ryhm (ryhmId, ryhmNimi)
+VALUES (2, 'TITpv24');
+
+--lisame Foreign ´Key - võõrvõti-välisvõti
+ALTER TABLE opilane ADD ryhmId int;
+SELECT * FROM opilane;
+SELECT * FROM ryhm;
+ALTER TABLE opilane ADD CONSTRAINT fk_ryhm
+FOREIGN KEY (ryhmId) REFERENCES ryhm(ryhmId);
+
+--kontrollimiseks - täidame tabeli opilane 
+INSERT INTO opilane 
+VALUES ('Leena','Burova', '2000-08-21' ,1,'+37256819158','Tallinn', 4.3, '5667897', 2);
+```
