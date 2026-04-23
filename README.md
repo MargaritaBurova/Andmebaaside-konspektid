@@ -4,7 +4,7 @@ andmebaasidega seotud SQL kood ja konspektid
 - [Põhimõisted](#põhimõisted)
 - [Andmetüübid](#andmetüübid)
 - [PIIRANGUD](#PIIRANGUD)
-- [# SQL - Strukture Query Language - struktureeritud päringu keel](#SQL-Strukture-Query-Language-struktureeritud-päringu-keel)
+- [# SQL - Strukture Query Language](#SQL-Strukture-Query-Language)
 - [ALTER TABLE](#ALTER-TABLE)
 - [tund 23.04](#tund-23.04)
 
