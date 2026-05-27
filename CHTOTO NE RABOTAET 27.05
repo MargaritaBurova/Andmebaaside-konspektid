@@ -1,4 +1,4 @@
-
+```sql 
 create database retseptiRaamatmargo;
 
 use retseptiRaamatmargo;
@@ -122,3 +122,4 @@ end;
 exec lisahinnang 1,'Väga maitsev',7;
 
 select * from Hinnang;
+```
