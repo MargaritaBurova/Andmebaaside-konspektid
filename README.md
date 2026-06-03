@@ -1,6 +1,6 @@
 # Andmebaaside konspektid | Margarita
 
-[Põhimõisted](README.md) | [Protseduurid](protseduur.md)
+[Põhimõisted](README.md) | [Protseduurid](protseduur.md) | [Protseduurid2](XAMPPprotseduur.md) | [Trigerid](triger.md) | [Keys](KEYS.md) | [HotelliRoom](hotelliRoom.md)
 
 andmebaasidega seotud SQL kood ja konspektid
 ## SISUKORD 
