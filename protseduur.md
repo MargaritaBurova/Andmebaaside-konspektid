@@ -62,6 +62,7 @@ Update guest set arveSumma=2000 WHERE guestId=2
 
 ```
 <img width="552" height="440" alt="{57603696-69BC-4B27-944C-CBF95B0F25CE}" src="https://github.com/user-attachments/assets/fa817b7f-1777-4078-a9a3-b8bf02338be1" />
+
 ```sql
 CREATE PROCEDURE minmaxArve
     @minArve MONEY OUTPUT,
@@ -107,4 +108,5 @@ END;
 EXEC muudatus 'add', 'guest', 'testVeerg', int
 SELECT * FROM guest
 EXEC muudatus 'drop', 'guest', 'testVeerg'
+
 ```
