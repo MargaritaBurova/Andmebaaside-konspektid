@@ -1,4 +1,7 @@
-# Andmebaasid
+# Andmebaaside konspektid | Margarita
+
+[Põhimõisted](README.md) | [Protseduurid](protseduur.md)
+
 andmebaasidega seotud SQL kood ja konspektid
 ## SISUKORD 
 - [Põhimõisted](#põhimõisted)
